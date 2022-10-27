@@ -82,15 +82,18 @@ function genera()
     // controllo il vincitore
     if(sceltaParteUtente == "Pari" && risultatoSomma == "Pari")
     {
-        console.log("Hai vinto");
+        // console.log("Hai vinto");
+        document.getElementById('risultatoFinale').innerHTML = '<h3 class="bg-success text-white text-center p-2 border rounded-4">Hai Vinto!</h3>';
     }
     else if(sceltaParteUtente == "Dispari" && risultatoSomma == "Dispari")
     {
-        console.log("Hai Vinto");
+        // console.log("Hai Vinto");
+        document.getElementById('risultatoFinale').innerHTML = '<h3 class="bg-success text-white text-center p-2 border rounded-4">Hai Vinto!</h3>';
     }
     else
     {
-        console.log("Hai perso");
+        // console.log("Hai perso");
+        document.getElementById('risultatoFinale').innerHTML = '<h3 class="bg-danger text-white text-center p-2 border rounded-4">Hai Perso</h3>';
     }
 
 }
