@@ -25,7 +25,7 @@ function genera()
 {
     // Ricavo valori inseriti dall'utente
     let sceltaParteUtente = document.getElementById('sceltaParteUtente').value;
-    console.log(sceltaParteUtente);
+    
     let sceltaNumeroUtente = parseInt(document.getElementById('sceltaNumeroUtente').value);
     
     let numeroUtente = document.getElementById('numeroUtente');
@@ -37,6 +37,8 @@ function genera()
     let numeroRandom = Math.round(Math.random() * 5);
     if(numeroRandom == 0){numeroRandom++}
 
+    //Variabile che contiene il risultato della funzione somma()
+    let risultatoSomma;
     
 
     if(sceltaParteUtente == "Pari o Dispari?")
@@ -71,33 +73,43 @@ function genera()
         numeroCpu.innerText = `Numero computer: ${numeroRandom}`;
     }
    
-    somma(sceltaNumeroUtente, numeroRandom);
 
+
+    // ------------------------------------------------
+    
+    risultatoSomma = somma(sceltaNumeroUtente, numeroRandom);
+
+    // controllo il vincitore
+    if(sceltaParteUtente == "Pari" && risultatoSomma == "Pari")
+    {
+        console.log("Hai vinto");
+    }
+    else if(sceltaParteUtente == "Dispari" && risultatoSomma == "Dispari")
+    {
+        console.log("Hai Vinto");
+    }
+    else
+    {
+        console.log("Hai perso");
+    }
 
 }
 
 
-
-
-
-
-
-
-
-
-function somma(a, b){
+function somma(a, b)
+{
     let sum = a + b;
-
+   
     if(sum % 2 == 0)
     {
-        console.log("La somma è pari.")
+        
+        return "Pari";
     }
-    else if(sum % 2 == 1)
+    else
     {
-        console.log("La somma è dispari.")
+        
+        return "Dispari";
     }
-
-    console.log(`La somma è: ${sum}`);
 }
 
 function refresh()
