@@ -14,35 +14,40 @@ Pari e Dispari
     -Dichiariamo chi ha vinto.
 */
 
+
+
 /*
  funzione che permette di scegliere pari o dispari
  e in base alla risposta
  imposta la scelta contraria all'avversario
 */
-function scelta()
+function genera()
 {
     // Ricavo valori inseriti dall'utente
     let sceltaParteUtente = document.getElementById('sceltaParteUtente').value;
-    let sceltaNumeroUtente = document.getElementById('sceltaNumeroUtente').value;
+    console.log(sceltaParteUtente);
+    let sceltaNumeroUtente = parseInt(document.getElementById('sceltaNumeroUtente').value);
     
-    let risultatoSceltaUtente = document.getElementById('risultatoSceltaUtente');
     let numeroUtente = document.getElementById('numeroUtente');
+    let numeroCpu = document.getElementById('numeroCpu');
+    let risultatoSceltaUtente = document.getElementById('risultatoSceltaUtente');
     let risultatoSceltaCpu = document.getElementById('risultatoSceltaCpu');
 
+    //Genero numero random (1 - 5)
     let numeroRandom = Math.round(Math.random() * 5);
     if(numeroRandom == 0){numeroRandom++}
 
-    // Controllo la scelta fatta
+    
+
     if(sceltaParteUtente == "Pari o Dispari?")
     {
-        alert("ATTENZIONE! Devi scegliere pari o dispari!");
-        risultatoSceltaUtente.innerText = "";
-        risultatoSceltaCpu.innerText = "";
+        alert("ATTENZIONE! Scegli pari o dispari");
+        refresh();
     }
     else if(sceltaParteUtente == "Pari")
     {
         risultatoSceltaUtente.innerText = "Pari";
-        risultatoSceltaCpu.innerText = "Dispari";        
+        risultatoSceltaCpu.innerText = "Dispari";
     }
     else
     {
@@ -50,40 +55,53 @@ function scelta()
         risultatoSceltaCpu.innerText = "Pari";
     }
 
+    
+    
+
     // ------------------------------------------------
 
-   if(sceltaNumeroUtente == "Scegli numero da 1 a 5")
-   {
-    alert("ATTENZIONE! Devi scegliere un numero tra 1 e 5!");
-    numeroUtente.innerText = "";
-   }
-   else
-   {
-    numeroUtente.innerText = sceltaNumeroUtente;
-    numeroCpu.innerText = numeroRandom;
-   }
-
+    if(sceltaNumeroUtente == "Scegli numero da 1 a 5")
+    {
+        alert("ATTENZIONE! Devi scegliere un numero tra 1 e 5!");
+        refresh();
+    }
+    else
+    {
+        numeroUtente.innerText = `Il tuo numero: ${sceltaNumeroUtente}`;
+        numeroCpu.innerText = `Numero computer: ${numeroRandom}`;
+    }
+   
+    somma(sceltaNumeroUtente, numeroRandom);
 
 
 }
 
-function pari_dispari()
+
+
+
+
+
+
+
+
+
+function somma(a, b){
+    let sum = a + b;
+
+    if(sum % 2 == 0)
+    {
+        console.log("La somma è pari.")
+    }
+    else if(sum % 2 == 1)
+    {
+        console.log("La somma è dispari.")
+    }
+
+    console.log(`La somma è: ${sum}`);
+}
+
+function refresh()
 {
-    
-
-    
-
-    
+    location.reload();
 }
-
-
-
-
-
-
-
-
-
-
-
 // ----- FINE :) -----
