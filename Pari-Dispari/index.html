@@ -30,6 +30,7 @@
   <div class="container">
     <div class="bg-">
       <h2>Pari o Dispari</h2>
+      <span>Scegli da che parte stare, scegli un numero da 1 a 5 e premi Vai!</span>
     </div>
   </div>
 
@@ -37,22 +38,27 @@
 
   <div class="container mb-5">
     <h2>Fai la tua scelta!</h2>
-    <select class="personal-h-50px w-25" name="" id="sceltaUtente">
-      <option class="text-center">Pari</option>
-      <option class="text-center">Dispari</option>
-    </select>
+    <form action="">
+      <select class="personal-h-50px w-25" name="" id="sceltaUtente">
+        <option class="text-center">Pari o Dispari?</option>
+        <option class="text-center">Pari</option>
+        <option class="text-center">Dispari</option>
+      </select>
+      <button type="button" class="btn btn-warning" onclick="scelta()">Vai</button>
+    </form>
+    
   </div>
 
   <div class="container">
 
     <div class="mb-5 d-flex align-items-center">
       <i class="fa-solid fa-user col-1"></i>
-      <span id="risultatoSceltaUtente">testo</span>
+      <span id="risultatoSceltaUtente"></span>
     </div>
 
     <div class="d-flex align-items-center">
       <i class="fa-solid fa-robot col-1"></i>
-      <span id="risultatoSceltaCpu">testo</span>
+      <span id="risultatoSceltaCpu"></span>
     </div>
 
   </div>
