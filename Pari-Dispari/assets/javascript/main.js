@@ -21,17 +21,25 @@ Pari e Dispari
 */
 function scelta()
 {
-    let sceltaUtente = document.getElementById('sceltaUtente').value;
+    // Ricavo valori inseriti dall'utente
+    let sceltaParteUtente = document.getElementById('sceltaParteUtente').value;
+    let sceltaNumeroUtente = document.getElementById('sceltaNumeroUtente').value;
+    
     let risultatoSceltaUtente = document.getElementById('risultatoSceltaUtente');
+    let numeroUtente = document.getElementById('numeroUtente');
     let risultatoSceltaCpu = document.getElementById('risultatoSceltaCpu');
 
-    if(sceltaUtente == "Pari o Dispari?")
+    let numeroRandom = Math.round(Math.random() * 5);
+    if(numeroRandom == 0){numeroRandom++}
+
+    // Controllo la scelta fatta
+    if(sceltaParteUtente == "Pari o Dispari?")
     {
-        alert("Devi scegliere pari o dispari!");
+        alert("ATTENZIONE! Devi scegliere pari o dispari!");
         risultatoSceltaUtente.innerText = "";
         risultatoSceltaCpu.innerText = "";
     }
-    else if(sceltaUtente == "Pari")
+    else if(sceltaParteUtente == "Pari")
     {
         risultatoSceltaUtente.innerText = "Pari";
         risultatoSceltaCpu.innerText = "Dispari";        
@@ -41,6 +49,22 @@ function scelta()
         risultatoSceltaUtente.innerText = "Dispari";
         risultatoSceltaCpu.innerText = "Pari";
     }
+
+    // ------------------------------------------------
+
+   if(sceltaNumeroUtente == "Scegli numero da 1 a 5")
+   {
+    alert("ATTENZIONE! Devi scegliere un numero tra 1 e 5!");
+    numeroUtente.innerText = "";
+   }
+   else
+   {
+    numeroUtente.innerText = sceltaNumeroUtente;
+    numeroCpu.innerText = numeroRandom;
+   }
+
+
+
 }
 
 function pari_dispari()
